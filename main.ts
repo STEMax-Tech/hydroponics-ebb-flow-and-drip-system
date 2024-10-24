@@ -378,5 +378,18 @@ basic.forever(function on_handle_icon() {
     
 })
 basic.forever(function on_handleTimer() {
+    let motor: number;
+    
+    basic.pause(1000)
+    if (timeEA > 0) {
+        timeEA -= 1
+    } else {
+        timeEA = timeDelayEA
+        motor = 1
+    }
+    
+    if (timeRemainSetup > 0) {
+        timeRemainSetup -= 1
+    }
     
 })

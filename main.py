@@ -309,5 +309,13 @@ def on_handle_icon():
 basic.forever(on_handle_icon)
 
 def on_handleTimer():
-    pass
+    global timeEA, timeDelayEA, timeRemainSetup
+    basic.pause(1000)
+    if timeEA > 0:
+        timeEA -= 1
+    else:
+        timeEA = timeDelayEA
+        motor = 1
+    if timeRemainSetup > 0:
+        timeRemainSetup -= 1
 basic.forever(on_handleTimer)
